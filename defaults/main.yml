@@ -1,0 +1,7 @@
+---
+# defaults file for ansible-role-hosts-file
+hosts_file:
+  add:
+    - 127.0.0.1     elhost
+  remove:
+    - 127.0.0.1     elhost
