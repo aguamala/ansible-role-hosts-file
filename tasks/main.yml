@@ -3,10 +3,10 @@
 
 - name: Add line to hosts file
   lineinfile: dest=/etc/hosts state=present  line="{{ item }}"
-  with_items: hosts_file.add
+  with_items: "{{ hosts_file.add }}"
   when: hosts_file.add is defined
 
-- name: Add line to hosts file
+- name: Remove line from hosts file
   lineinfile: dest=/etc/hosts state=absent  regexp="{{ item }}"
-  with_items: hosts_file.remove
+  with_items: "{{ hosts_file.remove }}"
   when: hosts_file.remove is defined
